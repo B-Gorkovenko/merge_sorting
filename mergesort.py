@@ -8,29 +8,30 @@ def mergeSort(alist):
         mergeSort(lefthalf)
         mergeSort(righthalf)
 
-        i=0 #for lefthalf
-        j=0 #for righthalf
-        k=0 #just counter
-        while i<len(lefthalf) and j<len(righthalf):
-            if lefthalf[i]<righthalf[j]:
-                alist[k]=lefthalf[i]
-                i=i+1
+        leftcounter=0 #for lefthalf
+        rightcounter=0 #for righthalf
+        commoncounter=0 #just counter
+        while leftcounter<len(lefthalf) and rightcounter<len(righthalf):
+            if lefthalf[leftcounter]<righthalf[rightcounter]:
+                alist[commoncounter]=lefthalf[leftcounter]
+                leftcounter+=1
             else:
-                alist[k]=righthalf[j]
-                j=j+1
-            k=k+1
+                alist[commoncounter]=righthalf[rightcounter]
+                rightcounter+=1
+            commoncounter+=+1
 
-        while i<len(lefthalf):
-            alist[k]=lefthalf[i]
-            i=i+1
-            k=k+1
+        while leftcounter<len(lefthalf):
+            alist[commoncounter]=lefthalf[leftcounter]
+            leftcounter+=1
+            commoncounter+=1
 
-        while j<len(righthalf):
-            alist[k]=righthalf[j]
-            j=j+1
-            k=k+1
+        while rightcounter<len(righthalf):
+            alist[commoncounter]=righthalf[rightcounter]
+            rightcounter+=1
+            commoncounter+=1
     print("Merging ",alist)
 
-alist = [18,35,57,24,68,8,47,25]
+alist = [18,35,57,24,
+         68,8,47,25]
 mergeSort(alist)
 print(alist)
