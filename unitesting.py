@@ -1,7 +1,8 @@
 import unittest
-#import mergesort as method
 import random
 from mergesort import mergeSort
+
+
 class IntegerSortTest(unittest.TestCase):
     def test_sort_on_empty_list(self):
         alist = []
@@ -24,38 +25,13 @@ class IntegerSortTest(unittest.TestCase):
         self.assertEqual(items4, [3, 3, 5, 5, 5,
                                   7, 7, 7, 7])
 
-    def test_sort_on_lists_of_random_integers_with_duplicates(self):
-        # Generate list of 20 random integers from range [1...10]
-        items1 = []
-        for x in range(0, 20):
-            items1.append(random.randint(1, 10))
-        print(items1)
-        sorted_items1 = mergeSort(items1)  # Create a copy of list in sorted order
-        sorted(items1)  # Call mutative sort function to sort list items in place
-        self.assertEqual(items1, sorted_items1)
-        # Generate list of 50 random integers from range [1...20]
-        items2 = []
-        for x in range(0, 50):
-            items2.append(random.randint(1, 20))
-        sorted_items2 = mergeSort(items2)  # Copy
-        sorted(items2)  # Mutate
-        self.assertEqual(items2, sorted_items2)
-
-        # Generate list of 100 random integers from range [1...30]
-        items3 = []
-        for x in range(0, 100):
-            items3.append(random.randint(1, 30))
-        sorted_items3 = mergeSort(items3)  # Copy
-        sorted(items3)  # Mutate
-        self.assertEqual(items3, sorted_items3)
-
     def test_sort_on_lists_of_random_integers(self):
         # Generate list of 10 random integers from range [1...20]
         items1 = []
         for x in range(0, 10):
             items1.append(random.randint(1, 20))
-        sorted_items1 = mergeSort(items1)  # Create a copy of list in sorted order
-        sorted(items1)  # Call mutative sort function to sort list items in place
+        sorted_items1 = mergeSort(items1)  # Creating a copy of list
+        sorted(items1)  # Sorting list items in place
         self.assertEqual(items1, sorted_items1)
 
         # Generate list of 20 random integers from range [1...50]
@@ -73,6 +49,7 @@ class IntegerSortTest(unittest.TestCase):
         sorted_items3 = mergeSort(items3)  # Copy
         sorted(items3)  # Mutate
         self.assertEqual(items3, sorted_items3)
+
 
 if __name__ == "__main__":
     unittest.main()
