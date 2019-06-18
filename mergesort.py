@@ -32,6 +32,7 @@ def mergeSort(alist):
     print("Merging ", alist)
     return alist
 
+
 if __name__ == "__main__":
     alist = [18, 35, 57, 24, 68, 8, 47, 25]
     mergeSort(alist)
